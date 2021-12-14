@@ -53,9 +53,9 @@ def get_products():
 def get_product(_id):
     product = Product.find_by_id(_id)
     if product:
-        return jsonify(Product.json)
+        return jsonify(product.json)
 
-    return jsonify(Product.json[0])
+    return jsonify(product.json[0])
 
 
 # curl --header "Content-Type: application/json" --request POST --data '{"name": "product 3"}' -v http://localhost:5000/products
